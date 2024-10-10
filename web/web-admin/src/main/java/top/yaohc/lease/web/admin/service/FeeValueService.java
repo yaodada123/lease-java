@@ -2,6 +2,9 @@ package top.yaohc.lease.web.admin.service;
 
 import top.yaohc.lease.model.entity.FeeValue;
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.yaohc.lease.web.admin.vo.fee.FeeKeyVo;
+
+import java.util.List;
 
 /**
 * @author liubo
@@ -9,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-07-24 15:48:00
 */
 public interface FeeValueService extends IService<FeeValue> {
-
+//    List<FeeKeyVo> listFeeInfo();
 }

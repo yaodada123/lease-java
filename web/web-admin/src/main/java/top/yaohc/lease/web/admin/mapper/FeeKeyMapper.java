@@ -13,7 +13,7 @@ import java.util.List;
 * @Entity top.yaohc.lease.model.FeeKey
 */
 public interface FeeKeyMapper extends BaseMapper<FeeKey> {
-
+    List<FeeKeyVo> listFeeInfo();
 }
 
 
