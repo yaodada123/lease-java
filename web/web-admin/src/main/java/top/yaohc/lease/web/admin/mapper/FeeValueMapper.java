@@ -1,5 +1,6 @@
 package top.yaohc.lease.web.admin.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import top.yaohc.lease.model.entity.FeeValue;
 import top.yaohc.lease.web.admin.vo.fee.FeeValueVo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -12,8 +13,10 @@ import java.util.List;
 * @createDate 2023-07-24 15:48:00
 * @Entity top.yaohc.lease.model.FeeValue
 */
+@Mapper
 public interface FeeValueMapper extends BaseMapper<FeeValue> {
 
+    List<FeeValueVo> selectListByApartmentId(Long id);
 }
 
 

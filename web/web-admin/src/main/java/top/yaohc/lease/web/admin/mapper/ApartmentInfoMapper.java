@@ -1,5 +1,6 @@
 package top.yaohc.lease.web.admin.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import top.yaohc.lease.model.entity.ApartmentInfo;
 import top.yaohc.lease.model.enums.LeaseStatus;
 import top.yaohc.lease.web.admin.vo.apartment.ApartmentItemVo;
@@ -14,8 +15,11 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 * @createDate 2023-07-24 15:48:00
 * @Entity top.yaohc.lease.model.ApartmentInfo
 */
+@Mapper
 public interface ApartmentInfoMapper extends BaseMapper<ApartmentInfo> {
+    IPage<ApartmentItemVo> pageApartmentItemByQuery(IPage<ApartmentItemVo> page, ApartmentQueryVo queryVo);
 
+//    IPage<ApartmentItemVo> pageItem(IPage<ApartmentItemVo> page, ApartmentQueryVo queryVo);
 }
 
 
