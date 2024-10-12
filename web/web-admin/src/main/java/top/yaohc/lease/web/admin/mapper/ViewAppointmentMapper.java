@@ -1,5 +1,6 @@
 package top.yaohc.lease.web.admin.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import top.yaohc.lease.model.entity.ViewAppointment;
 import top.yaohc.lease.web.admin.vo.appointment.AppointmentQueryVo;
 import top.yaohc.lease.web.admin.vo.appointment.AppointmentVo;
@@ -12,8 +13,10 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 * @createDate 2023-07-24 15:48:00
 * @Entity top.yaohc.lease.model.ViewAppointment
 */
+@Mapper
 public interface ViewAppointmentMapper extends BaseMapper<ViewAppointment> {
 
+    IPage<AppointmentVo> pageAppointmentByQuery(IPage<AppointmentVo> page, AppointmentQueryVo queryVo);
 }
 
 

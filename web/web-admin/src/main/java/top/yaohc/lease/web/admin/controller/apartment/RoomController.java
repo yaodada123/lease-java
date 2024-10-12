@@ -1,9 +1,11 @@
 package top.yaohc.lease.web.admin.controller.apartment;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import top.yaohc.lease.common.result.Result;
 import top.yaohc.lease.model.entity.RoomInfo;
 import top.yaohc.lease.model.enums.ReleaseStatus;
+import top.yaohc.lease.web.admin.service.RoomInfoService;
 import top.yaohc.lease.web.admin.vo.room.RoomDetailVo;
 import top.yaohc.lease.web.admin.vo.room.RoomItemVo;
 import top.yaohc.lease.web.admin.vo.room.RoomQueryVo;
@@ -20,9 +22,13 @@ import java.util.List;
 @RequestMapping("/admin/room")
 public class RoomController {
 
+    @Autowired
+    private RoomInfoService service;
+
     @Operation(summary = "保存或更新房间信息")
     @PostMapping("saveOrUpdate")
     public Result saveOrUpdate(@RequestBody RoomSubmitVo roomSubmitVo) {
+        service.saveOrUpdate(roomSubmitVo);
         return Result.ok();
     }
 

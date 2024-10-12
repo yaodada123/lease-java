@@ -1,5 +1,6 @@
 package top.yaohc.lease.web.admin.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import top.yaohc.lease.model.entity.SystemPost;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -9,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2023-07-24 15:48:00
 * @Entity top.yaohc.lease.model.SystemPost
 */
+@Mapper
 public interface SystemPostMapper extends BaseMapper<SystemPost> {
 
 }

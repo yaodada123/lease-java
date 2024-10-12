@@ -14,11 +14,22 @@ spring:
       maximum-pool-size: 12 #连接池最大连接数，默认是10
       minimum-idle: 10 #最小空闲连接数量
       pool-name: SPHHikariPool # 连接池名称
+  jackson:
+    time-zone: GMT+8
+
+  data:
+    redis:
+      host: 192.168.130.133
+      port: 6379
+      database: 0
 
 #用于打印框架生成的sql语句，便于调试
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  global-config:
+#    db-config:
+#      update-strategy: not_null
 
 minio:
   endpoint: "http://192.168.130.133:9000"
@@ -28,3 +39,5 @@ minio:
 
 springdoc:
   default-flat-param-object: true
+
+

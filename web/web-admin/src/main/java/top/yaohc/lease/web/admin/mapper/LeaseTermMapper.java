@@ -1,5 +1,6 @@
 package top.yaohc.lease.web.admin.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import top.yaohc.lease.model.entity.LeaseTerm;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -11,6 +12,7 @@ import java.util.List;
 * @createDate 2023-07-24 15:48:00
 * @Entity top.yaohc.lease.model.LeaseTerm
 */
+@Mapper
 public interface LeaseTermMapper extends BaseMapper<LeaseTerm> {
 
 }

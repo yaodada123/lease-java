@@ -1,10 +1,14 @@
 package top.yaohc.lease.web.admin.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import org.springframework.beans.factory.annotation.Autowired;
 import top.yaohc.lease.model.entity.ViewAppointment;
 import top.yaohc.lease.web.admin.mapper.ViewAppointmentMapper;
 import top.yaohc.lease.web.admin.service.ViewAppointmentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import top.yaohc.lease.web.admin.vo.appointment.AppointmentQueryVo;
+import top.yaohc.lease.web.admin.vo.appointment.AppointmentVo;
 
 /**
  * @author liubo
@@ -14,7 +18,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class ViewAppointmentServiceImpl extends ServiceImpl<ViewAppointmentMapper, ViewAppointment>
         implements ViewAppointmentService {
+    @Autowired
+    private ViewAppointmentMapper viewAppointmentMapper;
 
+    @Override
+    public IPage<AppointmentVo> pageAppointmentByQuery(IPage<AppointmentVo> page, AppointmentQueryVo queryVo) {
+        return viewAppointmentMapper.pageAppointmentByQuery(page, queryVo);
+    }
 }
 
 

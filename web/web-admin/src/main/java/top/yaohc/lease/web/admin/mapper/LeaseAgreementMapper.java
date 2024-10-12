@@ -1,5 +1,6 @@
 package top.yaohc.lease.web.admin.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import top.yaohc.lease.model.entity.LeaseAgreement;
 import top.yaohc.lease.web.admin.vo.agreement.AgreementQueryVo;
 import top.yaohc.lease.web.admin.vo.agreement.AgreementVo;
@@ -12,8 +13,10 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 * @createDate 2023-07-24 15:48:00
 * @Entity top.yaohc.lease.model.LeaseAgreement
 */
+@Mapper
 public interface LeaseAgreementMapper extends BaseMapper<LeaseAgreement> {
 
+    IPage<AgreementVo> pageAgreementByQuery(IPage<AgreementVo> page, AgreementQueryVo queryVo);
 }
 
 
